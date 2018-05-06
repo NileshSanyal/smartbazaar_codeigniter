@@ -32,9 +32,9 @@
 									</div>
 									<div class="clearfix"></div>
 								</div>
-									<div class="add add-2">
-								   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="1" data-name="product 1" data-summary="summary 1" data-price="6.00" data-quantity="1" data-image="images/of16.png">Add to Cart</button>
-								</div>
+									<!-- <div class="add add-2">
+																	   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="1" data-name="product 1" data-summary="summary 1" data-price="6.00" data-quantity="1" data-image="images/of16.png">Add to Cart</button>
+																	</div> -->
 							</div>
 						</div>
 					</div>
@@ -72,8 +72,13 @@
 							<h4 class="quick">Quick Overview:</h4>
 							<p class="quick_desc"> Product Short description</p>
 							 <div class="add-to">
-								   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="17" data-name="Moisturiser" data-summary="summary 17" data-price="0.80" data-quantity="1" data-image="images/of16.png">Add to Cart</button>
-								</div>
+								   <!-- <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="17" data-name="Moisturiser" data-summary="summary 17" data-price="0.80" data-quantity="1" data-image="images/of16.png">Add to Cart</button> -->
+
+
+								   <form action="" method="post">
+									<button id="addedCartProduct" data-prodid="" data-prodname="" data-prodprice="" data-prodquantity="1" class="btn btn-danger my-cart-btn my-cart-b" type="submit">Add to Cart</button>
+								</form>	
+							</div>
 						</div>
 						<div class="clearfix"> </div>
 					</div>

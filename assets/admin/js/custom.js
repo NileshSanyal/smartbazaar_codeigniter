@@ -583,6 +583,7 @@ $(document).ready(function(){
 					jQuery('#addToCartBtn').attr("data-id",response.details[0].id);
 					jQuery('#addToCartBtn').attr("data-name",response.details[0].name);
 					jQuery('#addToCartBtn').attr("data-price",response.details[0].price);
+
 				}else if(response.error == 1){
 					console.log('response error');
 				}
@@ -617,6 +618,9 @@ $(document).ready(function(){
 					jQuery('.span-1').find('h3').text(response.details[0].name);
 					jQuery('span.reducedfrom').text(response.details[0].price);
 					jQuery('p.quick_desc').text(response.details[0].description);
+					jQuery('#addedCartProduct').attr("data-prodid",response.details[0].id);
+					jQuery('#addedCartProduct').attr("data-prodname",response.details[0].name);
+					jQuery('#addedCartProduct').attr("data-prodprice",response.details[0].price);
 
 				}else if(response.error == 1){
 					console.log('response error');
@@ -813,6 +817,53 @@ $(document).ready(function(){
 			});
 
 	});
+
+	/* Function for handling add to cart process for products page */
+	$('#addedCartProduct').on('click', function(e){
+		e.preventDefault();
+
+		var prodId = $(this).data('prodid');
+		var prodName = $(this).data('prodname');
+		var prodPrice = $(this).data('prodprice');
+		console.log('PRODUCT ID'+prodId);
+		console.log('PRODUCT NAME'+prodName);
+		console.log('PRODUCT PRICE'+prodPrice);
+		var prodQty = 1;
+
+		
+		jQuery.ajax({
+				url: baseURL+'addtocart',
+				data:{'id':prodId,'name':prodName,'price':prodPrice},
+				type:"POST",
+				dataType:"json",
+				beforeSend: function() {
+		        	$(this).prop('value', 'Adding...');
+		        	$(this).prop('disabled', true);
+		    	},
+				success: function(response){
+					if(response.success == 1){
+						
+						window.location.href = baseURL;
+					}else if(response.error == 1){
+						console.log('error');
+					}
+				},
+				complete: function() {
+					$(this).prop('value', 'Add to Cart');
+		        	$(this).prop('disabled', false);
+		        	swal({
+					  title: "Item has been added to the cart!",
+					  icon: "success",
+					  title: "Item has been added to the cart!",
+					  button: "OK"
+					});
+		    	},
+				error: function(){
+					console.log("Unknown Error");
+				}
+			});
+
+	});	
 
 	function preventSpecialCharacterInput(e){
 	    var keyCode = (e.keyCode ? e.keyCode : e.which);

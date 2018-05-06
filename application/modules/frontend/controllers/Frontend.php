@@ -10,8 +10,10 @@ class Frontend extends MX_Controller {
 		if(empty($this->usersessiondata)){
 			redirect(base_url());
 		}*/
-
+		//$this->load->library('paypal');
 		$this->load->model('frontend/frontend_model');
+		
+
 	}
 
 	/*Function for showing homepage */
@@ -989,5 +991,20 @@ a, a:hover {
 
 
 	}
+
+	public function buysuccess(){
+		$this->load->frontendtemplate('frontend/buysuccess');
+	}
+
+	public function buyitem($id){
+		//echo 'BUYING product with id'.$id;die;
+		//$CI =& get_instance();
+		//$businessEmail = $this->CI->config->item('business');
+
+		
+
+
+	}	
+
 
 }

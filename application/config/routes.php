@@ -47,4 +47,8 @@ $route['showcart'] = 'frontend/frontend/showcart';
 $route['updatecart'] = 'frontend/frontend/updatecart';
 $route['removeitem'] = 'frontend/frontend/removeitem';
 $route['checkout'] = 'frontend/frontend/checkout';
+//$route['buyitem/(:num)'] = 'frontend/frontend/buyitem/$1';
+$route['success'] = 'frontend/frontend/buysuccess';
+//$route['cancel'] = 'frontend/paypal/buycancel';
+//$route['ipn'] = 'frontend/paypal/ipn';
 /**************END FRONTEND MODULE**************/

@@ -112,19 +112,36 @@
 									</div>
 									<div class="clearfix"></div>
 								</div>
-									<div class="add add-2">
-								   <!-- <button class="btn btn-danger my-cart-btn my-cart-b" data-id="1" data-name="product 1" data-summary="summary 1" data-price="6.00" data-quantity="1" data-image="images/of16.png">Add to Cart</button> -->
-								<!-- <form action="<?php echo base_url('addtocart'); ?>" method="post">
-									<input type="hidden" name="id" id="prodId" value="<?php echo $sprod->id; ?>" />
-									<input type="hidden" name="qty" id="prodQty" value="1" />
-									<input type="hidden" name="name" id="prodName" value="<?php echo $sprod->name; ?>">
-									<input type="hidden" name="price" id="prodPrice" value="<?php echo $sprod->price; ?>">	
-								
-									<img id="loader" src="<?php echo $frontend_assets; ?>images/loader.gif" style="display:none;margin-top: 224px;margin-left: 83px;" height="60" width="60" class="img-head" alt="">
-								
-									<button id="addToCartBtn" class="btn btn-danger my-cart-btn my-cart-b" type="submit">Add to Cart</button>
-								</form>	 -->
-								</div>
+									<div class="add add-2">	
+										<!-- <a href="<?php //echo base_url();?>buyitem/<?php //echo $sprod->id;?>">
+											<img src="<?php //echo $frontend_assets; ?>images/x-click-but01.gif" />
+										</a> -->
+
+										<form action="<?php echo $this->config->item('posturl'); ?>" method="post">
+											<input type="hidden" value="1" name="upload">
+
+											<input type="hidden" value="<?php echo $this->config->item('returnurl'); ?>" name="return">
+
+											<input type="hidden" value="_cart" name="cmd">
+
+											<input type="hidden" value="<?php echo $sprod->name; ?>" name="item_name_1">
+
+											<input type="hidden" value="<?php echo $sprod->id; ?>" name="item_number_1">
+
+											<input type="hidden" value="<?php echo $sprod->price; ?>" name="amount_1">
+
+											<input type="hidden" value="1" name="quantity_1">
+
+											<input type="hidden" name="currency_code" value="USD">
+
+
+											    <input type="hidden" value="<?php echo base_url();?>success" name="return">
+
+											<input type="image" src="<?php echo $frontend_assets;?>images/x-click-but01.gif">
+
+										</form>
+
+									</div>
 							</div>
 						</div>
 					</div>
@@ -133,8 +150,6 @@
 							}
 						}
 					?>
-
-					<?php //echo $this->pagination->create_links(); ?>
 
 					<div class="clearfix"></div>
 				</div>
@@ -157,7 +172,6 @@
 						<div class="col-md-7 span-1 ">
 							<h3></h3>
 							<div class="price_single">
-							  <!-- <span class="reducedfrom ">$0.80</span> -->
 								Rs.&nbsp;<span class="reducedfrom"></span>
 							 <div class="clearfix"></div>
 							</div>
@@ -165,9 +179,10 @@
 							<p class="quick_desc"> Product Short description</p>
 
 							<div class="add-to">
-								<form action="<?php echo base_url('addtocart'); ?>" method="post">
+								<form action="" method="post">
 									<button id="addToCartBtn" data-id="" data-name="" data-price="" data-quantity="1" class="btn btn-danger my-cart-btn my-cart-b" type="submit">Add to Cart</button>
 								</form>	
+
 							</div>
 
 						</div>
