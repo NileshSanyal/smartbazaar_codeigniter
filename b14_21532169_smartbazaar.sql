@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 29, 2018 at 11:13 AM
+-- Generation Time: May 06, 2018 at 06:12 AM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.2.3
 
@@ -110,7 +110,10 @@ INSERT INTO `orders` (`id`, `product_id`, `product_name`, `quantity`, `product_p
 (7, '10,7,20,8', 'JK Jeera,Orange Juice,Kelloggs Corn Flakes,Oven Cookies', '2,1,1,2', '40,70,200,45', '80.00,70.00,200.00,90.00', '440.00', 2, 'kartik', '2018-04-29 08:58:03'),
 (8, '9', 'Chocolate Pizza', '2', '999', '1,998.00', '1,998.00', 2, 'kartik', '2018-04-29 09:11:29'),
 (9, '9', 'Chocolate Pizza', '2', '999', '1,998.00', '1,998.00', 2, 'kartik', '2018-04-29 09:11:30'),
-(10, '17,10', 'Aquafina Packaged Drinking Water,JK Jeera', '1,1', '25,40', '25.00,40.00', '65.00', 2, 'kartik', '2018-04-29 09:12:32');
+(10, '17,10', 'Aquafina Packaged Drinking Water,JK Jeera', '1,1', '25,40', '25.00,40.00', '65.00', 2, 'kartik', '2018-04-29 09:12:32'),
+(11, '15', 'Cabbage Small', '1', '20', '20.00', '20.00', 2, 'kartik', '2018-05-05 04:33:34'),
+(12, '8', 'Oven Cookies', '1', '45', '45.00', '45.00', 2, 'kartik', '2018-05-05 05:10:43'),
+(13, '15,16', 'Cabbage Small,Palak Saag', '1,1', '20,30', '20.00,30.00', '50.00', 2, 'kartik', '2018-05-05 05:16:42');
 
 -- --------------------------------------------------------
 
@@ -156,7 +159,7 @@ CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `username` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `password` varchar(255) NOT NULL COMMENT '1st user pass: 123456',
+  `password` varchar(255) NOT NULL COMMENT '2nd user pass: 123456',
   `mobile_no` varchar(11) NOT NULL,
   `isblocked` tinyint(1) NOT NULL DEFAULT '0' COMMENT '0= Not blocked,1= Blocked'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -236,7 +239,7 @@ ALTER TABLE `client`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `products`
